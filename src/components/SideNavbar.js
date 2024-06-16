@@ -32,9 +32,6 @@ const SideNavbar = ({ children }) => {
   return (
     <div className='container'>
       <div className='sidebar'>
-        <div className='top_section'>
-          <h1 className='logo'>Dashboard</h1>
-        </div>
         {menuItem.map((item, index) => (
           <NavLink
             to={item.path}
@@ -42,8 +39,13 @@ const SideNavbar = ({ children }) => {
             className='link'
             activeclassName='active'
           >
-            <div className='icon'>{item.icon}</div>
             <div className='link_text'>{item.name}</div>
+
+            {item.name === 'B2c Clients' ? (
+              <span className='notification'>215</span>
+            ) : (
+              ''
+            )}
           </NavLink>
         ))}
       </div>
